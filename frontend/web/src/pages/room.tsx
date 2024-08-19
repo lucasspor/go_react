@@ -3,7 +3,7 @@ import { ArrowRight, Share2 } from "lucide-react"
 import { toast } from "sonner"
 
 import amaLogo from '../assets/ama-logo.svg'
-import { Message } from "./components/message"
+import { Message } from "../components/message"
 
 export function Room() {
   const { roomId } = useParams()
