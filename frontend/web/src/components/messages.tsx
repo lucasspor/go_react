@@ -12,21 +12,22 @@ export function Messages() {
 
   const { data } = useSuspenseQuery({
     queryKey: ['messages', roomId],
-    queryFn: () => getRoomMessage({roomId}),
+    queryFn: () => getRoomMessage({ roomId }),
   })
 
   return (
     <ol className="list-decimal list-outside px-3 space-y-8">
       {
-        data.messages.map( message =>{
-          return(
+        data.messages.map(message => {
+          return (
             <Message
+              id={message.id}
               key={message.id}
               text={message.text}
-               amountOfReactions={message.amountOfReactions}
-                answered={message.answered}/>
+              amountOfReactions={message.amountOfReactions}
+              answered={message.answered} />
           )
-         
+
         })
       }
     </ol>
